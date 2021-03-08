@@ -1,0 +1,32 @@
+<form
+  class="card form"
+  [formGroup]="editListForm"
+  (ngSubmit)="onSave(list, this?.editListForm.controls.name.value)"
+>
+  <div class="buttons">
+    <button class="btn goto" type="reset" title="Goto" (click)="onRoute(list)">
+      <fa-icon [icon]="faList"></fa-icon>
+    </button>
+    <button id="save" class="btn save" type="submit" title="Save">
+      Save
+    </button>
+    <button
+      class="btn delete"
+      type="reset"
+      (click)="onDelete(list)"
+      title="Delete"
+    >
+      Delete
+    </button>
+  </div>
+  <div class="list-input">
+    <input
+      class="list-name"
+      type="text"
+      id="list-name"
+      formControlName="name"
+      title="Todo List Title"
+    />
+  </div>
+  <hr />
+</form>
